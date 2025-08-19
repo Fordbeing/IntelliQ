@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: Ai-IntelliQ
+  profiles:
+    active: local
+
+server:
+  port: 8081
+  servlet:
+    context-path: /api
+
+langchain4j:
+  community:
+    dashscope:
+      chat-model:
+        model-name: qwen-max
+        api-key: <You API Key here>
+
+# RAG 相关配置
+rag:
+  # 文档加载配置
+  document:
+    # 文档存放路径（支持绝对路径或相对路径）
+    path: src/main/resources/docs
+
+  # 文档分割器配置
+  splitter:
+    # 分割策略：paragraph（按段落）、sentence（按句子）
+    type: paragraph
+    # 最大片段长度
+    max-length: 1000
+    # 片段重叠长度（提升上下文连贯性）
+    overlap: 200
+
+  # 检索器配置
+  retriever:
+    # 最大返回结果数
+    max-results: 5
+    # 最低匹配分数（过滤不相关结果）
+    min-score: 0.75
+
+  # 文档嵌入配置
+  ingest:
+    # 是否异步加载文档（大量文档时建议开启，避免阻塞应用启动）
+    async: true
