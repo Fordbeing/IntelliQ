@@ -9,5 +9,5 @@ public interface FileUploadService {
 
     List<String> multiFileUpload(MultipartFile[] files);
 
-    void getFileByUserId();
+    List<String> getFileByUserId(String userId, String folder);
 }

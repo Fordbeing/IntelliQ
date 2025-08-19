@@ -1,16 +1,19 @@
 package org.ff.aiintelliq.ai.service;
 
-import io.minio.BucketExistsArgs;
-import io.minio.MakeBucketArgs;
-import io.minio.MinioClient;
-import io.minio.PutObjectArgs;
+import io.minio.*;
+import io.minio.errors.*;
+import io.minio.messages.Item;
 import jakarta.annotation.Resource;
 import lombok.extern.slf4j.Slf4j;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -33,24 +36,7 @@ public class FileUploadServiceImpl implements FileUploadService {
         try {
             // 确保存储桶存在
             ensureBucketExists();
-            // 生成唯一文件名
-            String originalFilename = multipartFile.getOriginalFilename();
-            String suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
-            String fileName = UUID.randomUUID().toString() + suffix;
-
-            // 上传文件
-            try (InputStream inputStream = multipartFile.getInputStream()) {
-                minioClient.putObject(
-                        PutObjectArgs.builder()
-                                .bucket(bucketName)
-                                .object(fileName)
-                                .stream(inputStream, multipartFile.getSize(), -1)
-                                .contentType(multipartFile.getContentType())
-                                .build()
-                );
-            }
-
-            return fileName;
+            return saveFileToMinio(multipartFile);
         } catch (Exception e) {
             throw new RuntimeException("文件上传失败：" + e.getMessage());
         }
@@ -76,27 +62,42 @@ public class FileUploadServiceImpl implements FileUploadService {
                 continue;
             }
 
-            try {
-                String originalFilename = file.getOriginalFilename();
-                String suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
-                String fileName = UUID.randomUUID().toString() + suffix;
+            // 先对文件进行向量化存储
 
-                try (InputStream inputStream = file.getInputStream()) {
-                    minioClient.putObject(
-                            PutObjectArgs.builder()
-                                    .bucket(bucketName)
-                                    .object(fileName)
-                                    .stream(inputStream, file.getSize(), -1)
-                                    .contentType(file.getContentType())
-                                    .build()
-                    );
-                }
-                fileNames.add(fileName);
+            try {
+                String objectName = saveFileToMinio(file);
+                fileNames.add(objectName);
             } catch (Exception e) {
-                throw new RuntimeException("文件 " + file.getOriginalFilename() + " 上传失败：" + e.getMessage());
+                throw new RuntimeException("文件 " + file.getOriginalFilename() + " 上传失败：" + e.getMessage(), e);
             }
         }
         return fileNames;
+    }
+
+    private @NotNull String saveFileToMinio(MultipartFile file) throws IOException, ErrorResponseException, InsufficientDataException, InternalException, InvalidKeyException, InvalidResponseException, NoSuchAlgorithmException, ServerException, XmlParserException {
+        String originalFilename = file.getOriginalFilename();
+        String contentType = file.getContentType();
+        String suffix = originalFilename.substring(originalFilename.lastIndexOf("."));
+        String fileName = UUID.randomUUID().toString() + suffix;
+
+        int index = originalFilename.lastIndexOf(".");
+        // 判断文件类型，区分存储路径
+        String folder = originalFilename.substring(index + 1);
+
+        // 存储路径： userId/document/uuid.xxx 或 userId/image/uuid.xxx
+        String objectName = "userId" + "/" + folder + "/" + fileName;
+
+        try (InputStream inputStream = file.getInputStream()) {
+            minioClient.putObject(
+                    PutObjectArgs.builder()
+                            .bucket(bucketName)
+                            .object(objectName)
+                            .stream(inputStream, file.getSize(), -1)
+                            .contentType(contentType)
+                            .build()
+            );
+        }
+        return objectName;
     }
 
     /**
@@ -118,7 +119,7 @@ public class FileUploadServiceImpl implements FileUploadService {
                                 .bucket(bucketName)
                                 .build()
                 );
-                 log.info("存储桶 {} 不存在，已自动创建", bucketName);
+                log.info("存储桶 {} 不存在，已自动创建", bucketName);
             } else {
                 log.info("存储桶 {} 已存在", bucketName);
             }
@@ -128,8 +129,55 @@ public class FileUploadServiceImpl implements FileUploadService {
     }
 
 
+    /**
+     * 根据用户ID和目录获取所有文件路径
+     * @param userId 用户ID
+     * @param folder 目录名 (document / image)
+     * @return 文件路径列表
+     */
     @Override
-    public void getFileByUserId() {
-        // 实现根据用户ID获取文件的逻辑
+    public List<String> getFileByUserId(String userId, String folder) {
+        List<String> fileList = new ArrayList<>();
+        try {
+            String prefix = userId + "/" + folder + "/";
+
+            Iterable<Result<Item>> results = minioClient.listObjects(
+                    ListObjectsArgs.builder()
+                            .bucket(bucketName)
+                            .prefix(prefix)   // 按前缀查询
+                            .recursive(true)  // 递归获取子目录
+                            .build()
+            );
+
+            for (Result<Item> result : results) {
+                Item item = result.get();
+                fileList.add(item.objectName());
+            }
+        } catch (Exception e) {
+            throw new RuntimeException("获取文件列表失败：" + e.getMessage(), e);
+        }
+        return fileList;
+    }
+
+    /**
+     * 获取某个目录下的具体文件
+     * @param userId 用户ID
+     * @param folder 目录名 (document / image)
+     * @param fileName 文件名 (如 123.pdf)
+     * @return 文件流
+     */
+    public InputStream getFileByName(String userId, String folder, String fileName) {
+        try {
+            String objectName = userId + "/" + folder + "/" + fileName;
+
+            return minioClient.getObject(
+                    GetObjectArgs.builder()
+                            .bucket(bucketName)
+                            .object(objectName)
+                            .build()
+            );
+        } catch (Exception e) {
+            throw new RuntimeException("获取文件失败：" + e.getMessage(), e);
+        }
     }
 }

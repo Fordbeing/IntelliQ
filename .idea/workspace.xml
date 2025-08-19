@@ -5,31 +5,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ba195593-d79f-4299-9aeb-728f5fc765d4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/MARKDOWN_GUIDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/MARKDOWN_GUIDE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/src/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/src/api/chatApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/src/api/chatApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/src/components/ChatInput.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/src/components/ChatInput.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/src/components/ChatMessage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/src/components/ChatMessage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/src/components/LoadingDots.vue" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/src/components/LoadingDots.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/src/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/src/utils/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/src/utils/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ai-code-helper-frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/AI-IntellIQ-Front/vite.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ff/aiintelliq/ai/controller/FileUploadController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ff/aiintelliq/ai/controller/FileUploadController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ff/aiintelliq/ai/service/FileUploadService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ff/aiintelliq/ai/service/FileUploadService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/ff/aiintelliq/ai/service/FileUploadServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/ff/aiintelliq/ai/service/FileUploadServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application-local.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ff/aiintelliq/ai/listener/ChatModelListenerConfig$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/ff/aiintelliq/ai/listener/ChatModelListenerConfig.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Fordbeing"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Fordbeing&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:Fordbeing/IntelliQ.git",
-    "accountId": "62105f4a-4cc0-4dd5-9bb6-2e7df38957c2"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;git@github.com:Fordbeing/IntelliQ.git&quot;,
+    &quot;accountId&quot;: &quot;62105f4a-4cc0-4dd5-9bb6-2e7df38957c2&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="31UlZp7upXeoQsnyP8JTicYlgdV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -37,20 +69,43 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.AiIntelliQApplication.executor": "Debug",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Volumes/Ti600/program/IntelliQ",
+    "last_opened_file_path": "D:/IDEAProgram/IntelliQ",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "vue.rearranger.settings.migration": "true",
+    "应用程序.URLDocumentLoader.executor": "Debug"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunManager" selected="应用程序.URLDocumentLoader">
+    <configuration name="URLDocumentLoader" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.ff.aiintelliq.ai.util.URLDocumentLoader" />
+      <module name="ai-code-helper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.ff.aiintelliq.ai.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="IntelliQ" />
       <method v="2">
@@ -64,12 +119,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.URLDocumentLoader" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -82,10 +142,43 @@
       <option name="presentableId" value="Default" />
       <updated>1755586589672</updated>
       <workItem from="1755586590829" duration="705000" />
+      <workItem from="1755602838756" duration="8687000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/ff/aiintelliq/ai/service/FileUploadServiceImpl.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/ff/aiintelliq/ai/controller/FileUploadController.java</url>
+          <line>21</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/ff/aiintelliq/ai/util/MinioDocumentLoader.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
